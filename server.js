@@ -1,0 +1,10 @@
+const ronin     = require( 'ronin-server' )
+const mocks     = require( 'ronin-mocks' )
+const database  = require( 'ronin-database' )
+const server = ronin.server()
+
+console.log('here is connection string!')
+console.log(process.env.CONNECTIONSTRING)
+database.connect( process.env.CONNECTIONSTRING )
+server.use( '/', mocks.server( server.Router(), false, false ) )
+server.start()    
