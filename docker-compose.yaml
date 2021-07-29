@@ -6,7 +6,6 @@ services:
    context: .
   ports:
    - 8000:8000
-   - 9229:9229
   environment:
    - CONNECTIONSTRING=mongodb://mongo:27017/notes
   volumes:
